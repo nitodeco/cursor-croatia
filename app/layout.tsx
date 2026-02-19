@@ -6,7 +6,7 @@ import { siteConfig } from "@/content/site.config";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: `${siteConfig.communityName} | Cursor Ambassador Site`,
+	title: `Cursor Croatia`,
 	description: "Home of the Croatian Cursor Community.",
 	openGraph: {
 		title: siteConfig.communityName,
