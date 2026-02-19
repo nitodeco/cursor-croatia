@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve the Cursor Ambassador Site Template.
+Thanks for helping improve the Croatian Cursor community site.
 
 ## Setup
 
@@ -9,13 +9,13 @@ Thanks for helping improve the Cursor Ambassador Site Template.
 3. Install dependencies:
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 4. Start development:
 
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 ## Making Changes
@@ -40,7 +40,7 @@ Thanks for helping improve the Cursor Ambassador Site Template.
 3. Run build before submitting:
 
    ```bash
-   npm run build
+   pnpm run build
    ```
 
 4. Open a PR with:

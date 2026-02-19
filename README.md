@@ -1,4 +1,4 @@
-# Cursor Ambassador Evergreen Template
+# Cursor Croatia
 
 The official Cursor community page for Croatia.
 
