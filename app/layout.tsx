@@ -7,10 +7,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
 	title: `${siteConfig.communityName} | Cursor Ambassador Site`,
-	description: "Reusable Cursor Ambassador website template for local communities.",
+	description: "Home of the Croatian Cursor Community.",
 	openGraph: {
 		title: siteConfig.communityName,
-		description: "Reusable Cursor Ambassador website template for local communities.",
+		description: "Home of the Croatian Cursor Community.",
 		type: "website",
 	},
 };
