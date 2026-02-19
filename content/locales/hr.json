@@ -17,6 +17,11 @@
 	"ambassadors": {
 		"title": "Cursor {communityName} ambasadori"
 	},
+	"discord": {
+		"title": "Pridruži se na Discord",
+		"description": "Poveži se sa zajednicom, podijeli što gradiš i budi u toku.",
+		"join": "Pridruži se"
+	},
 	"footer": {
 		"hostingPartners": "Partneri",
 		"community": "Cursor zajednica",

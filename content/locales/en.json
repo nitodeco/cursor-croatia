@@ -17,6 +17,11 @@
 	"ambassadors": {
 		"title": "Cursor {communityName} ambassadors"
 	},
+	"discord": {
+		"title": "Join our Discord",
+		"description": "Connect with the community, share what you're building, and stay up to date.",
+		"join": "Join Discord"
+	},
 	"footer": {
 		"hostingPartners": "Partners",
 		"community": "Cursor Community",

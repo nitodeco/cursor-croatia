@@ -18,7 +18,7 @@ export const events: CursorEvent[] = [
 		location: "Microblink Office, Zagreb",
 		lumaUrl: "https://luma.com/zaqqtxf9",
 		status: "upcoming",
-	}
+	},
 ];
 
 export const upcomingEvents = events.filter((event) => event.status === "upcoming");

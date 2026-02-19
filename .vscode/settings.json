@@ -1,5 +1,5 @@
 {
 	"editor.defaultFormatter": "oxc.oxc-vscode",
 	"prettier.enable": false,
-	"biome.enabled": false,
+	"biome.enabled": false
 }

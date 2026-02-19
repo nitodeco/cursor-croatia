@@ -27,7 +27,7 @@ export const BentoGrid: React.FC<BentoGridProps> = ({
 	cols = 4,
 	rows = 4,
 	mobileCols = 2,
-	mobileRows = 4,
+	mobileRows = 6,
 	gapClassName = "gap-1",
 }) => {
 	return (

@@ -5,7 +5,7 @@ export const ambassadors: Ambassador[] = [
 	{
 		name: "Antonio Vidaković",
 		role: "Ambassador",
-		photo: "/images/ambassadors/amb1.png",
+		photo: "/images/ambassadors/amb1.webp",
 		links: {
 			x: "https://x.com/vida994",
 			github: "https://github.com/vida994",
@@ -16,12 +16,12 @@ export const ambassadors: Ambassador[] = [
 	{
 		name: "Nico Möhn",
 		role: "Ambassador",
-		photo: "/images/ambassadors/amb2.png",
+		photo: "/images/ambassadors/amb2.webp",
 		links: {
 			x: "https://x.com/nitodeco",
 			github: "https://github.com/nitodeco",
 			linkedin: "https://linkedin.com/in/nicomoehn",
 			website: "https://nicomoehn.codes",
 		},
-	}
+	},
 ];

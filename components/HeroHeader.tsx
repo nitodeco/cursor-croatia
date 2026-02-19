@@ -3,6 +3,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { siDiscord } from "simple-icons";
 import BentoGrid from "@/components/BentoGrid";
 import EventCountdown from "@/components/EventCountdown";
 import LanguageToggle from "@/components/LanguageToggle";
@@ -41,6 +42,14 @@ const CompactCountdown: React.FC = () => {
 	);
 };
 
+const DiscordIcon: React.FC = () => {
+	return (
+		<svg viewBox="0 0 24 24" aria-hidden="true" className="w-4 h-4">
+			<path d={siDiscord.path} fill="currentColor" />
+		</svg>
+	);
+};
+
 export const HeroHeader: React.FC = () => {
 	const { t } = useI18n();
 	const { nextEvent } = useNextEventCountdown();
@@ -76,7 +85,14 @@ export const HeroHeader: React.FC = () => {
 		<>
 			<nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center gap-4 px-4 py-6 sm:px-6 md:px-12 md:py-8 lg:px-16 bg-cursor-bg/90 backdrop-blur-md border-b border-cursor-border">
 				<div className="flex items-center gap-3 min-w-0">
-					<Image src="/cursor-logo.svg" alt="Cursor" width={128} height={48} priority className="h-6 md:h-8 w-auto shrink-0" />
+					<Image
+						src="/cursor-logo.svg"
+						alt="Cursor"
+						width={128}
+						height={48}
+						priority
+						className="h-6 md:h-8 w-auto shrink-0"
+					/>
 					<span className="font-cursor text-lg md:text-xl lg:text-2xl font-semibold tracking-tight text-cursor-text truncate">
 						{siteConfig.communityName}
 						{siteConfig.communityNameLocal ? (
@@ -87,20 +103,15 @@ export const HeroHeader: React.FC = () => {
 					</span>
 				</div>
 				<div className="flex items-center gap-3 md:gap-6 shrink-0">
-					<AnimatePresence>
-						{showCompactCountdown && <CompactCountdown />}
-					</AnimatePresence>
+					<AnimatePresence>{showCompactCountdown && <CompactCountdown />}</AnimatePresence>
 					<a
-						href="#upcoming"
-						className="hidden sm:block text-sm text-cursor-text-muted hover:text-cursor-text transition-colors"
+						href={siteConfig.discordUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="inline-flex items-center justify-center p-2 rounded border border-cursor-border text-cursor-text-muted hover:text-cursor-text hover:border-cursor-border-emphasis transition-colors"
+						aria-label="Join our Discord"
 					>
-						{t("home.upcomingEvents")}
-					</a>
-					<a
-						href="#recaps"
-						className="hidden sm:block text-sm text-cursor-text-muted hover:text-cursor-text transition-colors"
-					>
-						{t("home.pastEvents")}
+						<DiscordIcon />
 					</a>
 					<LanguageToggle />
 				</div>

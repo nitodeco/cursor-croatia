@@ -7,6 +7,7 @@ export const siteConfig = {
 	country: "Croatia",
 	lumaUrl: "https://luma.com/cursorcommunity",
 	cursorCommunityUrl: "https://cursor.com/community",
+	discordUrl: "https://discord.gg/PkgU9cBJxz",
 	defaultLocale: "en",
 	locales: ["en", "hr"],
 	footerTagline: "Made with Cursor by ambassadors worldwide",

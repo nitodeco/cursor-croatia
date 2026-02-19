@@ -45,9 +45,7 @@ export const UpcomingEvents: React.FC = () => {
 							className="py-3 first:pt-0 last:pb-0"
 						>
 							<div className="flex items-start gap-4">
-								<span className="text-sm font-medium text-cursor-text-muted w-28 shrink-0 pt-0.5">
-									{shortDate}
-								</span>
+								<span className="text-sm font-medium text-cursor-text-muted w-28 shrink-0 pt-0.5">{shortDate}</span>
 								<div className="flex-1 min-w-0">
 									<h3 className="text-cursor-text font-medium text-sm">{event.title}</h3>
 									<div className="flex items-center gap-2 mt-1">
