@@ -1,7 +1,9 @@
-import en from './en.json'
+import en from "./en.json";
+import hr from "./hr.json";
 
 export const localeBundles = {
-  en,
-} as const
+	en,
+	hr,
+} as const;
 
-export type LocaleBundleKey = keyof typeof localeBundles
+export type LocaleBundleKey = keyof typeof localeBundles;

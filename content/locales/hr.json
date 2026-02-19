@@ -1,0 +1,65 @@
+{
+	"home": {
+		"featured": "Istaknuto",
+		"upcomingEvents": "Nadolazeći eventi",
+		"register": "Prijavi se",
+		"pastEvents": "Prošli eventi",
+		"attendees": "{count} sudionika",
+		"hostedBy": "Organizira",
+		"viewRecap": "Pogledaj recap"
+	},
+	"countdown": {
+		"days": "Dana",
+		"hours": "Sati",
+		"minutes": "Minute",
+		"seconds": "Sekunde"
+	},
+	"ambassadors": {
+		"title": "Cursor {communityName} ambasadori"
+	},
+	"footer": {
+		"hostingPartners": "Partneri",
+		"community": "Cursor zajednica",
+		"allEvents": "Svi eventi na Lumi",
+		"madeWith": "Napravili Cursor ambasadori diljem svijeta"
+	},
+	"featured": {
+		"defaultDescription": "Praktična, hands-on serija radionica za buildere koji žele naučiti Cursor kroz stvarne workflowove."
+	},
+	"recap": {
+		"title": "Recap eventa",
+		"galleryTitle": "Fotke",
+		"gallerySubtitle": "{count} fotki s eventa",
+		"openPhoto": "Otvori fotku {index}",
+		"closeGallery": "Zatvori galeriju",
+		"prevPhoto": "Prethodna fotka",
+		"nextPhoto": "Sljedeća fotka",
+		"photoLabel": "Fotka {index} od {total}"
+	},
+	"photos": {
+		"title": "Napomena o fotkama",
+		"description": "Tijekom eventa ćemo slikati i snimati za društvene mreže i budući Cursor Community sadržaj.",
+		"preference": "Ako ne želiš biti na fotkama:",
+		"option1": "Javi se hostu kad dođeš",
+		"option2": "Poštovat ćemo tvoju želju",
+		"thanks": "Hvala na razumijevanju."
+	},
+	"matchmaking": {
+		"title": "Želiš upoznati nove ljude?",
+		"howItWorks": "Kako funkcionira",
+		"step1": "Dođi do host stola i uzmi {numberCard} (1-10)",
+		"step2": "Pronađi ostale s {sameNumber}",
+		"step3": "Sjednite zajedno i radite",
+		"iceBreakers": "Za razbijanje leda",
+		"question1": "\"Jesi li koristio/la Cursor prije?\"",
+		"question2": "\"Radiš li nešto cool s Cursorom?\"",
+		"question3": "\"Koji ti je najdraži Cursor feature?\"",
+		"numberCard": "random karticu s brojem",
+		"sameNumber": "istim brojem"
+	},
+	"worldEvents": {
+		"title": "Cafe Cursor diljem svijeta",
+		"subtitle": "Isti dan, različite vremenske zone",
+		"description": "Cursor korisnici zajedno buildaju po cijelom svijetu. Unatoč razlikama u vremenskim zonama, mi smo jedna zajednica."
+	}
+}

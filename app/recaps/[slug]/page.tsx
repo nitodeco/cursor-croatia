@@ -1,81 +1,82 @@
-import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import EventRecap from '@/components/EventRecap'
-import JsonLd from '@/components/JsonLd'
-import { recapsBySlug } from '@/content/recaps'
-import { siteConfig } from '@/content/site.config'
+import React from "react";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import EventRecap from "@/components/EventRecap";
+import JsonLd from "@/components/JsonLd";
+import { recapsBySlug } from "@/content/recaps";
+import { siteConfig } from "@/content/site.config";
 
 interface RecapPageProps {
-  params: {
-    slug: string
-  }
+	params: Promise<{
+		slug: string;
+	}>;
 }
 
-export function generateMetadata({ params }: RecapPageProps): Metadata {
-  const recap = recapsBySlug[params.slug]
-  if (!recap) return {}
+export async function generateMetadata({ params }: RecapPageProps): Promise<Metadata> {
+	const { slug } = await params;
+	const recap = recapsBySlug[slug];
+	if (!recap) return {};
 
-  const description = recap.summary[0] || `Recap of ${recap.title}`
+	const description = recap.summary[0] || `Recap of ${recap.title}`;
 
-  return {
-    title: `${recap.title} | ${siteConfig.communityName}`,
-    description,
-    openGraph: {
-      title: recap.title,
-      description,
-      type: 'article',
-      ...(recap.photos[0]?.src
-        ? { images: [{ url: recap.photos[0].src, alt: recap.photos[0].alt }] }
-        : {}),
-    },
-  }
+	return {
+		title: `${recap.title} | ${siteConfig.communityName}`,
+		description,
+		openGraph: {
+			title: recap.title,
+			description,
+			type: "article",
+			...(recap.photos[0]?.src ? { images: [{ url: recap.photos[0].src, alt: recap.photos[0].alt }] } : {}),
+		},
+	};
 }
 
 function buildRecapJsonLd(slug: string) {
-  const recap = recapsBySlug[slug]
-  if (!recap) return null
+	const recap = recapsBySlug[slug];
+	if (!recap) return null;
 
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Event',
-    name: recap.title,
-    startDate: recap.date,
-    description: recap.summary[0] || '',
-    organizer: {
-      '@type': 'Organization',
-      name: siteConfig.communityName,
-    },
-    ...(recap.attendees
-      ? { maximumAttendeeCapacity: recap.attendees }
-      : {}),
-    ...(recap.host
-      ? {
-          location: {
-            '@type': 'Place',
-            name: recap.host.name,
-          },
-        }
-      : {}),
-    ...(recap.photos[0]?.src ? { image: recap.photos[0].src } : {}),
-    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-    eventStatus: 'https://schema.org/EventScheduled',
-  }
+	return {
+		"@context": "https://schema.org",
+		"@type": "Event",
+		name: recap.title,
+		startDate: recap.date,
+		description: recap.summary[0] || "",
+		organizer: {
+			"@type": "Organization",
+			name: siteConfig.communityName,
+		},
+		...(recap.attendees ? { maximumAttendeeCapacity: recap.attendees } : {}),
+		...(recap.host
+			? {
+					location: {
+						"@type": "Place",
+						name: recap.host.name,
+					},
+				}
+			: {}),
+		...(recap.photos[0]?.src ? { image: recap.photos[0].src } : {}),
+		eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+		eventStatus: "https://schema.org/EventScheduled",
+	};
 }
 
-export default function RecapPage({ params }: RecapPageProps) {
-  const recap = recapsBySlug[params.slug]
-  if (!recap) {
-    notFound()
-  }
+export const RecapPage: React.FC<RecapPageProps> = async ({ params }) => {
+	const { slug } = await params;
+	const recap = recapsBySlug[slug];
+	if (!recap) {
+		notFound();
+	}
 
-  const jsonLd = buildRecapJsonLd(params.slug)
+	const jsonLd = buildRecapJsonLd(slug);
 
-  return (
-    <main className="min-h-screen bg-cursor-bg text-cursor-text">
-      {jsonLd && <JsonLd data={jsonLd} />}
-      <div className="max-w-5xl mx-auto px-6 py-12">
-        <EventRecap recap={recap} />
-      </div>
-    </main>
-  )
-}
+	return (
+		<main className="min-h-screen bg-cursor-bg text-cursor-text">
+			{jsonLd && <JsonLd data={jsonLd} />}
+			<div className="max-w-5xl mx-auto px-6 py-12">
+				<EventRecap recap={recap} />
+			</div>
+		</main>
+	);
+};
+
+export default RecapPage;
