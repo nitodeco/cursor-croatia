@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { I18nProvider } from "@/lib/i18n";
 import { siteConfig } from "@/content/site.config";
 import "./globals.css";
