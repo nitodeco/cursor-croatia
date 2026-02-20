@@ -55,6 +55,7 @@ export const HeroHeader: React.FC = () => {
 	const { nextEvent } = useNextEventCountdown();
 	const countdownRef = useRef<HTMLDivElement>(null);
 	const [heroCountdownVisible, setHeroCountdownVisible] = useState(true);
+	const [isClientRendered, setIsClientRendered] = useState(false);
 
 	const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
 		const entry = entries.at(0);
@@ -62,6 +63,10 @@ export const HeroHeader: React.FC = () => {
 		if (entry) {
 			setHeroCountdownVisible(entry.isIntersecting);
 		}
+	}, []);
+
+	useEffect(() => {
+		setIsClientRendered(true);
 	}, []);
 
 	useEffect(() => {
@@ -79,7 +84,7 @@ export const HeroHeader: React.FC = () => {
 		};
 	}, [handleIntersection]);
 
-	const showCompactCountdown = !!nextEvent && !heroCountdownVisible;
+	const showCompactCountdown = isClientRendered && !!nextEvent && !heroCountdownVisible;
 
 	return (
 		<>
@@ -136,7 +141,7 @@ export const HeroHeader: React.FC = () => {
 					<div className="relative h-full">
 						<BentoGrid photos={headerPhotos} cols={4} rows={4} mobileCols={2} mobileRows={4} />
 						<div ref={countdownRef} className="absolute inset-0 z-10 flex items-center justify-center px-4">
-							<EventCountdown />
+							{isClientRendered ? <EventCountdown /> : null}
 						</div>
 					</div>
 				</motion.div>
